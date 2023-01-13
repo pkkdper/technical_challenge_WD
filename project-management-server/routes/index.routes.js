@@ -1,16 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const Phone = require('../models/Phone.model')
+const phonesJSON = require("../db/phones.json")
 router.get("/phones", async (req, res, next) => {
-  const phones = await Phone.find()
-//  res.json(phones)
- res.json("hi")
+   res.json(phonesJSON)
 });
 
 router.get("/phones/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const phone = await phone.findById(id);
+    const phone = await phonesJSON.findById(id);
     res.json(phone);
   } catch (error) {
     res.status(404).json({ message: "phone not found" });

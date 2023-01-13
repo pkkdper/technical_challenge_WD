@@ -1,5 +1,8 @@
 const app = require("./app");
-
+require('dotenv').config();
+// const path = require('path')
+// require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+// require('dotenv').config({ path: require('find-config')('.env') })
 // ℹ️ Sets the PORT for our app to have access to it. If no env has been set, we hard code it to 5005
 const PORT = process.env.PORT || 5005;
 
